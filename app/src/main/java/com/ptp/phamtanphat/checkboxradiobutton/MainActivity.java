@@ -2,13 +2,14 @@ package com.ptp.phamtanphat.checkboxradiobutton;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     CheckBox ckAndroid,ckios;
     RadioGroup radioGroup;
@@ -24,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
         radioGroup = findViewById(R.id.radiogroup);
         radioButtonNode = findViewById(R.id.radiobuttonNode);
         radioButtonPhp = findViewById(R.id.radiobuttonPhp);
+
+        radioGroup.setOnClickListener(this);
 
         ckios.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
@@ -49,5 +52,12 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.radiobuttonNode :
+        }
     }
 }
